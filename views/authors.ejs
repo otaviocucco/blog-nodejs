@@ -1,0 +1,27 @@
+<?- include('header', {title:"Authors",directory:"./"}); ?>
+
+<div class="mainheading">
+    <h1 class="sitetitle">Authors</h1>
+    <p class="lead">
+        Bootstrap theme, medium style, simply perfect for bloggers
+    </p>
+    <? for(let i=0; i< authors.length; i++){ ?>
+
+        <?=authors[i].name?>
+        <br>
+        <?=authors[i].email?>
+    
+        <br>
+        <?=authors[i].description?>
+        <br>
+        <?=authors[i].createAt?>
+
+        <br>
+        
+        <hr>
+        
+
+    <? } ?>
+</div>
+
+<?- include('footer', {directory:"./"}); ?>

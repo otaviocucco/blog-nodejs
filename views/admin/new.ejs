@@ -1,0 +1,64 @@
+<?- include('header', {title:"Add",directory:"./"}); ?>
+
+<!-- partial -->
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">New post</h4>
+            <p class="card-description">
+              Add a new blog post
+            </p>
+            <form method="POST" class="forms-sample">
+              <div class="form-group">
+                <label for="exampleInputName1">Image</label>
+                <input type="text" class="form-control" name="image" placeholder="Link"
+                  value="<? if (typeof post !== 'undefined') { __append(post.image) } ?>">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputName1">Title</label>
+                <input type="text" class="form-control" name="title" placeholder="Title"
+                  value="<? if (typeof post !== 'undefined') { __append(post.title) } ?>">
+              </div>
+              <div class="form-group">
+                <label for="exampleTextarea1">Description</label>
+                <textarea class="form-control" name="description" rows="4"
+                  placeholder="Description"><? if (typeof post !== 'undefined') { __append(post.description) } ?></textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputName1">Author</label>
+                <input type="text" class="form-control" name="author" placeholder="Author"
+                  value="<? if (typeof post !== 'undefined') { __append(post.author) } ?>">
+              </div>
+              <button type="submit" class="btn btn-primary mr-2">Submit</button>
+              <a href="posts" class="btn btn-light">Cancel</a>
+            </form>
+            <? if (typeof msg !== 'undefined') { ?>
+            <h3>
+              <?=msg?>
+            </h3>
+            <? } ?>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  <!-- partial:./partials/_footer.html -->
+  <footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com
+        2020</span>
+      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a
+          href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from
+        Bootstrapdash.com</span>
+    </div>
+  </footer>
+  <!-- partial -->
+</div>
+
+<?- include('footer', {directory:"./"}); ?>
